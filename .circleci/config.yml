@@ -1,0 +1,20 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: python:latest
+    steps:
+      - run: echo "testing..."
+
+  deploy:
+    docker:
+      - image: python:latest
+    steps:
+      - run: echo "deploying..."
+
+workflows:
+  dry_run:
+    jobs:
+      - test
+      - deploy
