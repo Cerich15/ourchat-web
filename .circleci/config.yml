@@ -11,7 +11,7 @@ jobs:
     docker:
       - image: python:latest
     steps:
-      - run: echo "deploying..."
+      - run: echo "deploying...."
 
 workflows:
   build_deploy:
