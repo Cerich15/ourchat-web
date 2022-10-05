@@ -15,6 +15,13 @@ jobs:
 
 workflows:
   dry_run:
+    triggers:
+      - schedule:
+          filters:
+            branches:
+              only:
+                - prod
+                - uat
     jobs:
       - test
       - deploy
