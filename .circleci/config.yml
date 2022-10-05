@@ -2,22 +2,12 @@ version: 2.1
 
 jobs:
   test:
-    filters:
-      branches:
-        only:
-          - prod
-          - uat
     docker:
       - image: python:latest
     steps:
       - run: echo "testing..."
 
   deploy:
-    filters:
-      branches:
-        only:
-          - prod
-          - uat
     docker:
       - image: python:latest
     steps:
@@ -25,6 +15,13 @@ jobs:
 
 workflows:
   build_deploy:
+    triggers:
+      - schedule:
+          filters:
+            branches:
+              only:
+                - prod
+                - uat
     jobs:
       - test
       - deploy
