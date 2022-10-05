@@ -14,14 +14,7 @@ jobs:
       - run: echo "deploying...."
 
 workflows:
-  build_deploy:
-    triggers:
-      - schedule:
-          filters:
-            branches:
-              only:
-                - prod
-                - uat
+  test_build:
     jobs:
       - test
       - deploy
