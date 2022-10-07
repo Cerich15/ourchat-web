@@ -32,6 +32,6 @@ body #root {
 
 :root {
   --FONT-SIZE-S: 10px;
-  --FONT-SIZE-M: 10px;
-  --FONT-SIZE-L: 10px;
+  --FONT-SIZE-M: 12px;
+  --FONT-SIZE-L: 15px;
 }
