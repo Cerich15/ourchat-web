@@ -1,5 +1,7 @@
+import {Container} from "components";
+
 const App: React.FC = () => {
-  return <div>HELLO WORLD 26</div>;
+  return <Container>HELLO WORLD 26</Container>;
 };
 
 export default App;
