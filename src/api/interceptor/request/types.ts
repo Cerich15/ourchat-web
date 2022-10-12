@@ -1,5 +1,7 @@
+import {AxiosRequestConfig} from "axios";
+
 type Resolve = {
-  (store: object): (config: object) => void;
+  (store: object): (config: AxiosRequestConfig) => AxiosRequestConfig;
 };
 
 type Reject = {
