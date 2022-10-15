@@ -1,0 +1,109 @@
+.login-page {
+  flex-direction: row-reverse;
+  color: white;
+  background-color: #1b1716;
+  height: 38em;
+  width: 82em;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: var(--BORDER-RADIUS);
+}
+
+.input-fields {
+  color: white;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 20em;
+}
+
+.login-page .right-side {
+  flex-direction: column;
+}
+
+.title-container .app-title {
+  text-transform: uppercase;
+  font-size: var(--FONT-SIZE-L);
+}
+
+.title-container .tag-line {
+  font-size: var(--FONT-SIZE-M);
+  margin: 0 0 4.5em 5.8em;
+  font-weight: 100;
+}
+
+.title-container {
+  justify-content: center;
+  color: white;
+}
+
+.login-page .logo img {
+  height: 15em;
+  width: 15em;
+}
+
+.login-page .logo {
+  flex-direction: column;
+  max-width: 37em;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.login-page .login-button button {
+  width: 24em;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #ff8c00;
+}
+
+.login-page .sign-up button {
+  color: #ff8c00;
+  margin-top: 10px;
+  font-size: var(--FONT-SIZE-M);
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.login-page .confirmations {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.confirmations .input-fields input {
+  padding: 0.8em;
+  background-color: #2e3033;
+  color: white;
+}
+
+.login-page .facebook-button button {
+  background-color: #4e71ba;
+  color: white;
+  width: 11.5em;
+  height: 30px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.login-page .google-button button {
+  background-color: white;
+  color: black;
+  width: 11.5em;
+  height: 30px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+}
+
+.login-page .facebook-button img {
+  height: 15px;
+}
+.login-page .google-button img {
+  height: 15px;
+}
+.login-page .login-with {
+  flex-direction: row;
+  margin-top: 5em;
+  justify-content: space-between;
+}

@@ -1,7 +1,12 @@
 import {Container} from "components";
+import Login from "pages/Login";
 
 const App: React.FC = () => {
-  return <Container>HELLO WORLD 26</Container>;
+  return (
+    <Container>
+      <Login />
+    </Container>
+  );
 };
 
 export default App;
