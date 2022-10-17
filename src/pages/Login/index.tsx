@@ -64,7 +64,7 @@ const Login: React.FC<Props> = ({dispatch = () => {}}) => {
               <>
                 <Button
                   className={styles["login-button"]}
-                  label={""}
+                  label={"SignIn"}
                   onClick={login}
                 />
                 <Button
@@ -127,4 +127,5 @@ export default connector(Login);
  * - use pre-requisite selector before to style, ex. .parent .child { -- style here -- }
  * - use the reducer existing
  * - resolve all warnings
+ * - remove all "{}" if the value is literral string ex. label={"Login..."} should be label="Login..."
  */
