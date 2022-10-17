@@ -1,9 +1,5 @@
 import {Action, Dispatch, Reducer, State} from "ducks/types";
 
-type Entity = {
-  authenticated?: boolean;
-};
-
 type AuthType =
   | "SET-AUTH"
   | "SIGN-IN-AUTH"
@@ -11,7 +7,22 @@ type AuthType =
   | "GOOGLE-AUTH"
   | "FACEBOOK-AUTH";
 
-type AuthState = State<Entity>;
+type Auth = {
+  authenticated?: boolean;
+};
+type SignIn = {
+  username?: string;
+  password?: string;
+};
+type SignUp = {
+  firstname?: string;
+  lastname?: string;
+  headline?: string;
+  email?: string;
+  mobile_no?: string;
+} & SignIn;
+
+type AuthState = State<Auth & SignIn & SignUp>;
 
 type AuthAction = Action<AuthType, AuthState>;
 
@@ -26,7 +37,9 @@ const GOOGLE_AUTH: AuthType = "GOOGLE-AUTH";
 const FACEBOOK_AUTH: AuthType = "FACEBOOK-AUTH";
 
 export type {
-  Entity,
+  Auth,
+  SignIn,
+  SignUp,
   AuthType,
   AuthState,
   AuthAction,

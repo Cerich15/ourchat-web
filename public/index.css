@@ -34,8 +34,22 @@ body #root {
 }
 
 :root {
+  --BG-LOGIN: #181a1c;
+  --BG-LOGIN-PANE: #1c1e1f;
+
+  --ORANGE: #ff6b03;
+  --BLUE: #2f4684;
+  --WHITE: #ffffff;
+  --BLACK: #181818;
+
+  --FONT-COLOR: #e7e7e7;
+
   --FONT-SIZE-S: 10px;
   --FONT-SIZE-M: 15px;
   --FONT-SIZE-L: 30px;
-  --BORDER-RADIUS: 10px;
+
+  --BORDER-RADIUS-S: 7.5px;
+  --BORDER-RADIUS-M: 10px;
+  --BORDER-RADIUS-L: 12.5px;
+  --BORDER-RADIUS-XL: 15px;
 }

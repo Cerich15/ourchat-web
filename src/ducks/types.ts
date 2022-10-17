@@ -1,6 +1,25 @@
-type MapState = {};
+import {History} from "history";
+import {EnhancedStore} from "@reduxjs/toolkit";
+import {Action as ReduxAction, Dispatch as ReduxDispatch} from "redux";
 
-type MapDispatch = {};
+import {AuthState} from "./auth/types";
+
+type MapProps = {
+  store?: EnhancedStore;
+  auth?: AuthState;
+  router?: History;
+  history?: History;
+};
+
+type MapState = {
+  (state: MapProps): MapProps;
+};
+
+type MapDispatch = {
+  (dispatch: ReduxDispatch): {
+    dispatch?: (action: ReduxAction) => ReduxAction;
+  };
+};
 
 type Reducer<State, Action> = {
   (state: State, action: Action): State;
@@ -29,4 +48,4 @@ type Dispatch<Type, State> = {
   (payload: ActionProps<State>): Action<Type, State>;
 };
 
-export type {Reducer, Action, State, Dispatch};
+export type {Reducer, Action, State, Dispatch, MapState, MapDispatch, MapProps};

@@ -1,5 +1,11 @@
-type Props = {
-  style?: any;
-};
+import {Event, SetState} from "types";
 
-export type {Props};
+type ActionEvent = "sign-in" | "sign-up" | "google" | "facebook";
+type Key = "";
+type Value = "";
+
+type LoginEvent = Event<ActionEvent>;
+
+type LoginSetState = SetState<Key, Value>;
+
+export type {LoginEvent, LoginSetState};
