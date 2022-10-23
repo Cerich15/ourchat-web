@@ -1,19 +1,21 @@
+import React, {useState} from "react";
+
 import {Container} from "components";
 import Button from "components/Button";
 import InputField from "components/InputField";
 import Text from "components/Text";
 import {app_information, app_name, input_templates} from "constants/index";
-import React, {useState} from "react";
+import {connector, Props} from "ducks";
 import {getIcon} from "utils";
+
 import styles from "./.module.css";
-import {Props} from "./types";
 
 type InitState = {
   username: string;
   password: string;
 };
 
-const Login: React.FC<Props> = ({style}) => {
+const Login: React.FC<Props> = ({dispatch = () => {}}) => {
   const initState = {username: "", password: ""};
   const [state, seState] = useState<InitState>(initState);
 
@@ -37,7 +39,7 @@ const Login: React.FC<Props> = ({style}) => {
   };
 
   return (
-    <Container style={style} className={styles["login-page"]}>
+    <Container className={styles["login-page"]}>
       <Container className={styles["right-side"]}>
         {app_name.map((text, textIndex) => (
           <div className={styles["title-container"]} key={textIndex}>
@@ -49,7 +51,6 @@ const Login: React.FC<Props> = ({style}) => {
             />
           </div>
         ))}
-
         {input_templates.map(({label, placeholder, name}, index) => (
           <Container className={styles["confirmations"]} key={index}>
             <InputField
@@ -59,12 +60,11 @@ const Login: React.FC<Props> = ({style}) => {
               onChange={onChange(name)}
               className={styles["input-fields"]}
             />
-
             {index === 1 && (
               <>
                 <Button
                   className={styles["login-button"]}
-                  label={""}
+                  label={"SignIn"}
                   onClick={login}
                 />
                 <Button
@@ -89,7 +89,6 @@ const Login: React.FC<Props> = ({style}) => {
               />
             }
           />
-
           <Button
             label={"Login with Google"}
             onClick={loginAsFacebook}
@@ -114,8 +113,19 @@ const Login: React.FC<Props> = ({style}) => {
   );
 };
 
-export default Login;
+export default connector(Login);
 
-//create img component
-// place parent class
-//put type on app after converting to object
+/**
+ * TODO: @Refactor
+ * ASSIGNEEE: @Spencer
+ * TASKS:
+ * - create new Property for prefix and suffix component for Button and Input
+ * - create <Image/> component at src/components
+ * - create autogenerate @property {string} alt for Image component
+ * - re-arrange import and export statement
+ * - make all components export at <dir-name>/index.ts only
+ * - use pre-requisite selector before to style, ex. .parent .child { -- style here -- }
+ * - use the reducer existing
+ * - resolve all warnings
+ * - remove all "{}" if the value is literral string ex. label={"Login..."} should be label="Login..."
+ */

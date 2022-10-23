@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Noto+Serif&family=Raleway:wght@200&display=swap");
 html,
 body,
 div,
 p,
 button,
 input {
-  font-family: "Raleway", "sans-seri";
+  font-family: "Montserrat";
   margin: 0;
   padding: 0;
 }
@@ -34,8 +33,24 @@ body #root {
 }
 
 :root {
+  --BG-LOGIN: #181a1c;
+  --BG-LOGIN-PANE: #1c1e1f;
+
+  --BG-INPUT: #222425;
+
+  --ORANGE: #ff6b03;
+  --BLUE: #2f4684;
+  --WHITE: #ffffff;
+  --BLACK: #181818;
+
+  --FONT-COLOR: #e7e7e7;
+
   --FONT-SIZE-S: 10px;
   --FONT-SIZE-M: 15px;
   --FONT-SIZE-L: 30px;
-  --BORDER-RADIUS: 10px;
+
+  --BORDER-RADIUS-S: 7.5px;
+  --BORDER-RADIUS-M: 10px;
+  --BORDER-RADIUS-L: 12.5px;
+  --BORDER-RADIUS-XL: 15px;
 }
