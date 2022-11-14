@@ -1,11 +1,22 @@
-import {Event, SetState} from "types";
+import {Event, SetState} from 'constants/types';
 
-type ActionEvent = "sign-in" | "sign-up" | "google" | "facebook";
-type Key = "";
-type Value = "";
+type Layout = {
+  field: string;
+  placeholder: string;
+  type: string;
+  icon: string;
+};
 
-type LoginEvent = Event<ActionEvent>;
+type Key =
+  | 'username'
+  | 'password'
+  | 'sign-in'
+  | 'sign-up'
+  | 'google'
+  | 'facebook';
+type Val = string;
 
-type LoginSetState = SetState<Key, Value>;
+type LoginEvent = Event<Key, Val>;
+type LoginSetState = SetState<Key, Val>;
 
-export type {LoginEvent, LoginSetState};
+export type {Layout, LoginEvent, LoginSetState};

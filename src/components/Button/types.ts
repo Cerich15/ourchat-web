@@ -1,9 +1,9 @@
-type Prop = {
-  onClick: (val: any) => void;
+type Props = {
   className?: any;
   style?: any;
-  label: string;
-  icon?: any;
+  title?: string;
+  children?: any;
+  onClick?: (event: any) => void;
 };
 
-export type {Prop};
+export type {Props};
