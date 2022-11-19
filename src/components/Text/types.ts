@@ -1,6 +1,9 @@
+import {CSSProperties} from 'react';
+
 type Props = {
   className?: any;
-  text: string | string[];
+  style?: CSSProperties;
+  children: any;
 };
 
 export type {Props};

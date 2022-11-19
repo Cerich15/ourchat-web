@@ -1,3 +1,3 @@
-import signIn, {initState as signInInitState} from "./signIn";
+import signIn, {signInInitState} from './signIn';
 
 export {signIn, signInInitState};
