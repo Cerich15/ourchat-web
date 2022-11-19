@@ -1,15 +1,10 @@
-import Container from "components/Container";
-import {Prop} from "./types";
-import styles from "./.module.css";
+import {Props} from './types';
 
-const Button: React.FC<Prop> = ({className, style, onClick, label, icon}) => {
+const Button: React.FC<Props> = ({className, style, children, onClick}) => {
   return (
-    <Container className={`${styles.button} ${className}`}>
-      <button onClick={onClick}>
-        {icon && icon}
-        {label}
-      </button>
-    </Container>
+    <button className={className} style={style} onClick={onClick}>
+      {children || 'Button'}
+    </button>
   );
 };
 

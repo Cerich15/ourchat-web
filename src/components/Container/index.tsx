@@ -1,10 +1,9 @@
-import React from "react";
-import {Props} from "./types";
-import styles from "./.module.css";
+import React from 'react';
+import {Props} from './types';
 
 const Container: React.FC<Props> = ({style, className, children}) => {
   return (
-    <div style={style && style} className={`${styles.container} ${className}`}>
+    <div style={style} className={className}>
       {children}
     </div>
   );

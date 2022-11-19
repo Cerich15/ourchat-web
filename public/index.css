@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Noto+Serif&family=Raleway:wght@200&display=swap");
 html,
 body,
 div,
 p,
 button,
 input {
-  font-family: "Raleway", "sans-seri";
+  font-weight: 300;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -14,6 +15,31 @@ div,
 input,
 button {
   display: flex;
+  flex-direction: column;
+}
+
+button {
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  background-color: transparent;
+}
+button:hover {
+  cursor: pointer;
+}
+button:active {
+  opacity: 0.7;
+}
+
+input {
+  font-weight: 300;
+  padding: 2.5px 10px;
+  color: var(--WHITE);
+  background-color: transparent;
+}
+
+p {
+  letter-spacing: 1px;
 }
 
 button,
@@ -28,14 +54,35 @@ input:focus {
 body #root {
   flex: 1;
   height: 100vh;
-  background-color: #000000;
+  background-color: var(--BACKDROP);
   justify-content: center;
   align-items: center;
 }
 
 :root {
-  --FONT-SIZE-S: 10px;
-  --FONT-SIZE-M: 15px;
-  --FONT-SIZE-L: 30px;
-  --BORDER-RADIUS: 10px;
+  --BACKDROP: #191a1c;
+  --BG-LOGIN: #1d1e20;
+  --BG-INPUT: #222425;
+
+  --ORANGE: #fe6b03;
+  --BLUE: #0314fe;
+  --WHITE: #ffffff;
+  --DIRTY-WHITE: #999999;
+  --BLACK: #181818;
+
+  --BG-FACEBOOK: #2e4787;
+  --BG-GOOGLE: #ececec;
+
+  --FONT-COLOR: #fdfdfd;
+
+  --FONT-SIZE-WEB-S: 13px;
+  --FONT-SIZE-WEB-M: 16px;
+  --FONT-SIZE-WEB-L: 25px;
+
+  --BORDER-RADIUS-S: 5px;
+  --BORDER-RADIUS-M: 7.5px;
+  --BORDER-RADIUS-L: 12.5px;
+  --BORDER-RADIUS-XL: 15px;
+
+  --SHADOW-S: 2.5px 2.5px 10px rgba(0, 0, 0, 0.2);
 }

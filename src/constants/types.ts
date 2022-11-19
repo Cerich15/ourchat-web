@@ -1,7 +1,9 @@
-type InputTemplate = {
-  name: "username" | "password";
-  placeholder: string;
-  label: string;
+type Event<Key, Val> = {
+  (key: Key): (value: Val) => void;
 };
 
-export type {InputTemplate};
+type SetState<Key, Value> = {
+  (key: Key, val: Value): void;
+};
+
+export type {Event, SetState};

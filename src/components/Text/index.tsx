@@ -1,11 +1,10 @@
-import {Props} from "./types";
-import styles from "./.module.css";
+import {Props} from './types';
 
-const Text: React.FC<Props> = ({text, className}) => {
+const Text: React.FC<Props> = ({className, style, children}) => {
   return (
-    <div className={`${styles.text} ${className}`}>
-      <label>{text}</label>
-    </div>
+    <p className={className} style={style}>
+      {children}
+    </p>
   );
 };
 
