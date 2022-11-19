@@ -1,0 +1,15 @@
+.text-pane {
+  width: 30%;
+  gap: 2.5px;
+}
+.text-pane .title {
+  font-weight: 300;
+  font-size: var(--FONT-SIZE-WEB-L);
+  color: var(--WHITE);
+}
+.text-pane .subtitle {
+  align-self: flex-end;
+  font-weight: 200;
+  font-size: var(--FONT-SIZE-WEB-S);
+  color: var(--DIRTY-WHITE);
+}

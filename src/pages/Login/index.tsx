@@ -1,121 +1,64 @@
-import {Container} from "components";
-import Button from "components/Button";
-import InputField from "components/InputField";
-import Text from "components/Text";
-import {app_information, app_name, input_templates} from "constants/index";
-import React, {useState} from "react";
-import {getIcon} from "utils";
-import styles from "./.module.css";
-import {Props} from "./types";
+import React, {useReducer} from 'react';
 
-type InitState = {
-  username: string;
-  password: string;
-};
+import {connector, Props} from 'ducks';
+import {Container, Button, Input, Text, Image} from 'components';
+import {APP_INFORMATION} from 'constants/strings';
+import {signIn, signInInitState} from 'reducer';
+import {getIcon} from 'utils';
 
-const Login: React.FC<Props> = ({style}) => {
-  const initState = {username: "", password: ""};
-  const [state, seState] = useState<InitState>(initState);
+import {Services, Title} from './components';
+import {LoginEvent, LoginSetState} from './types';
+import styles from './.module.css';
+import {controllers} from './layout';
 
-  const onSetState = (key: string, val: string) => {
-    // seState({[key]: val});
+const Login: React.FC<Props> = ({}) => {
+  const [state, setState] = useReducer(signIn, signInInitState);
+
+  const onSetState: LoginSetState = (key, val) => {
+    setState({type: 'SET', payload: {[key]: val}});
   };
-  const onChange = (ae: string) => (value: string) => {
-    onSetState(ae, value);
+  const onChange: LoginEvent = (key) => (value) => {
+    onSetState(key, value);
   };
 
-  const login = () => {
-    alert("welcome");
-  };
-
-  const loginAsFacebook = () => {
-    alert("welcome facebook");
-  };
-
-  const loginAsGoogle = () => {
-    alert("welcome google");
-  };
+  const onClick: LoginEvent = (key) => (val) => {};
 
   return (
-    <Container style={style} className={styles["login-page"]}>
-      <Container className={styles["right-side"]}>
-        {app_name.map((text, textIndex) => (
-          <div className={styles["title-container"]} key={textIndex}>
-            <Text
-              text={text}
-              className={
-                textIndex !== 0 ? styles["tag-line"] : styles["app-title"]
-              }
-            />
-          </div>
-        ))}
-
-        {input_templates.map(({label, placeholder, name}, index) => (
-          <Container className={styles["confirmations"]} key={index}>
-            <InputField
-              name={label}
-              value={state[name]}
-              placeholder={placeholder}
-              onChange={onChange(name)}
-              className={styles["input-fields"]}
-            />
-
-            {index === 1 && (
-              <>
-                <Button
-                  className={styles["login-button"]}
-                  label={""}
-                  onClick={login}
-                />
-                <Button
-                  className={styles["sign-up"]}
-                  label={"Dont have an account yet?"}
-                  onClick={loginAsGoogle}
-                />
-              </>
-            )}
-          </Container>
-        ))}
-        <Container className={styles["login-with"]}>
-          <Button
-            label={"Login with Facebook"}
-            onClick={loginAsFacebook}
-            className={styles["facebook-button"]}
-            icon={
-              <img
-                src={getIcon("/facebook.png")}
-                alt=""
-                className={styles["facebook-logo"]}
-              />
-            }
-          />
-
-          <Button
-            label={"Login with Google"}
-            onClick={loginAsFacebook}
-            className={styles["google-button"]}
-            icon={
-              <img
-                src={getIcon("/google.png")}
-                alt=""
-                className={styles["facebook-logo"]}
-              />
-            }
-          />
+    <Container className={styles['login-pane']}>
+      <Container className={styles['left-pane']}>
+        <Container className={styles['logo-pane']}>
+          <Image className={styles['logo']} src={getIcon('/logo.png')} />
+        </Container>
+        <Container className={styles['info-pane']}>
+          <Text className={styles['info']}>{APP_INFORMATION}</Text>
         </Container>
       </Container>
-      <Container className={styles["left-side"]}>
-        <Container className={styles["logo"]}>
-          <img src={getIcon("/logo.png")} alt="" />
-          <Text text={app_information} />
+      <Container className={styles['right-pane']}>
+        <Container className={styles['title-pane']}>
+          <Title />
+        </Container>
+        <Container className={styles['input-pane']}>
+          {controllers.map((controller, controllerIndex) => (
+            <Input
+              key={controllerIndex}
+              className={styles['input']}
+              placeholder={controller.placeholder}
+              prefix={
+                <Image className={styles['icon']} src={getIcon(controller.icon)} />
+              }
+            />
+          ))}
+          <Button className={styles['login-btn']}>LOGIN</Button>
+          <Button className={styles['register-btn']}>
+            Don't have account yet?
+          </Button>
+        </Container>
+        <Container className={styles['services-pane']}>
+          <Services onClickFacebook={() => {}} onClickGoogle={() => {}} />
         </Container>
       </Container>
     </Container>
   );
 };
 
-export default Login;
-
-//create img component
-// place parent class
-//put type on app after converting to object
+export default connector(Login);

@@ -1,0 +1,29 @@
+.services-pane {
+  width: 55%;
+  height: 23%;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.services-pane button {
+  gap: 7.5px;
+  font-weight: 400;
+  border-radius: var(--BORDER-RADIUS-S);
+}
+
+.services-pane .icon {
+  width: 15%;
+  object-fit: contain;
+}
+
+.services-pane .facebook-btn {
+  flex-direction: row;
+  color: var(--WHITE);
+  background-color: var(--BG-FACEBOOK);
+}
+
+.services-pane .google-btn {
+  flex-direction: row;
+  background-color: var(--BG-GOOGLE);
+}

@@ -1,11 +1,13 @@
-import {Container} from "components";
-import Login from "pages/Login";
+import {Provider} from "react-redux";
 
-const App: React.FC = () => {
+import {Props} from "ducks";
+import Navigator from "navigator";
+
+const App: React.FC<Props> = ({store, history}) => {
   return (
-    <Container>
-      <Login />
-    </Container>
+    <Provider store={store!}>
+      <Navigator history={history!} />
+    </Provider>
   );
 };
 
