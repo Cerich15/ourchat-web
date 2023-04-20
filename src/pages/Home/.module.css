@@ -1,0 +1,36 @@
+.home-pane {
+    height: 35em;
+    width: 67em;
+    background-color: var(--BG-INPUT);
+    border-radius: var(--BORDER-RADIUS-M);
+    color: var(--WHITE);
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    
+}
+
+.btns {
+    flex-direction: row;
+    gap: 1em;
+}
+
+.incre-btn {
+    background-color: white;
+    color: green;
+    width: 3em;
+    height: 3em;
+}
+.decre-btn{
+    background-color: white;
+    color: red;
+    width: 3em;
+    height: 3em;
+
+}
+
+.display{
+    background-color: white;
+    color: var(--BG-INPUT)
+}

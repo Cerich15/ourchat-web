@@ -10,8 +10,9 @@ import {Services, Title} from './components';
 import {LoginEvent, LoginSetState} from './types';
 import styles from './.module.css';
 import {controllers} from './layout';
+import { push } from 'redux-first-history';
 
-const Login: React.FC<Props> = ({}) => {
+const Login: React.FC<Props> = ({dispatch}) => {
   const [state, setState] = useReducer(signIn, signInInitState);
 
   const onSetState: LoginSetState = (key, val) => {
@@ -21,8 +22,20 @@ const Login: React.FC<Props> = ({}) => {
     onSetState(key, value);
   };
 
-  const onClick: LoginEvent = (key) => (val) => {};
+  const onClick: LoginEvent = (key) => (val) => {
+    if (key==="sign-in") dispatch&&dispatch(push("/home"))
+  };
 
+  React.useEffect(() => {
+    // for (let i = 1; i <=10; i++) { q
+    //   console.log("here", i)
+    // }
+    for (let i = 10; i>=1; i--) {
+      console.log("here reverse", i)
+    }
+
+    
+  })
   return (
     <Container className={styles['login-pane']}>
       <Container className={styles['left-pane']}>
@@ -48,7 +61,7 @@ const Login: React.FC<Props> = ({}) => {
               }
             />
           ))}
-          <Button className={styles['login-btn']}>LOGIN</Button>
+          <Button className={styles['login-btn']} onClick={onClick("sign-in")}>LOGIN</Button>
           <Button className={styles['register-btn']}>
             Don't have account yet?
           </Button>
